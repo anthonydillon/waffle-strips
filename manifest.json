@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Waffle Strips",
+  "version": "0.1.1",
+  "description": "Add highlight strips to Waffle issues depending on whether they are developer or designer tasks",
+  "icons": { "16": "icon.png" },
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://waffle.io/*"]
+  }]
+}
