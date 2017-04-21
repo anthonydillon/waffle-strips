@@ -3,10 +3,13 @@
   "name": "Waffle Strips",
   "version": "0.1.2",
   "description": "Add highlight strips to Waffle issues depending on whether they are developer or designer tasks",
-  "icons": { "16": "icon.png" },
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["content.js"],
-    "matches": ["https://waffle.io/*"]
+    "matches": ["https://waffle.io/*"],
+    "run_at": "document_end"
   }]
 }
