@@ -28,18 +28,20 @@ var developerRepoNames = [
 
   // Iterates over the cards and determines how a card should be highlight.
   function highlightWaffleCards(cards) {
-    var cardsArray = Array.prototype.slice.call(cards);
-    Array.prototype.forEach.call(cardsArray, function(card) {
-      var sourceNameElement = card.querySelector('.source-name');
-      if (sourceNameElement) {
-        var sourceName = sourceNameElement.innerHTML;
-        if (developerRepoNames.indexOf(sourceName) >= 0) {
-          card.classList.add('developer-item');
-        } else {
-          card.classList.add('design-item');
+    setTimeout(function(){
+      var cardsArray = Array.prototype.slice.call(cards);
+      Array.prototype.forEach.call(cardsArray, function(card) {
+        var sourceNameElement = card.querySelector('.source-name');
+        if (sourceNameElement) {
+          var sourceName = sourceNameElement.innerHTML;
+          if (developerRepoNames.indexOf(sourceName) >= 0) {
+            card.classList.add('developer-item');
+          } else {
+            card.classList.add('design-item');
+          }
         }
-      }
-    });
+      });
+    }, 500);
   }
 
   // Everytime an element is added to the board element this function checks 
@@ -47,8 +49,7 @@ var developerRepoNames = [
   function checkDOMUpdate(e) {
     var newElement = e.target;
     if (newElement.classList && newElement.classList.contains('card')) {
-      var cards = document.querySelectorAll('.card');
-      highlightWaffleCards(cards);
+      highlightWaffleCards([newElement]);
     }
   }
   onload();
