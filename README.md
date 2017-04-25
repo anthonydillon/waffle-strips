@@ -4,7 +4,7 @@ Add highlight strips to Waffle issues depending on whether they are developer or
 
 ## Usage
 
-1. Download [waffle-strips.zip](https://github.com/canonical-webteam/waffle-strips/archive/0.1.2.zip)
+1. Download [waffle-strips.zip](https://github.com/canonical-webteam/waffle-strips/archive/0.2.0.zip)
 2. Unzip the folder
 3. Open Chrome
 4. Go to chrome://extensions/
